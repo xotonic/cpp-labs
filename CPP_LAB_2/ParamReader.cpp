@@ -20,7 +20,7 @@ void ParamReader::CheckParams(int argc, char *argv[])
 		operation = div;
 	else operation = invalid;
 
-	
+	//apaapapapap
 	input.clear();
 	input.str(argv[2]);
 
