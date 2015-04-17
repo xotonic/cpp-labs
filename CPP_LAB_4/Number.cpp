@@ -81,5 +81,3 @@ bool Number::setDen(int pden)
 	den = pden;
 	return true;
 }
-
-Number::~Number(){}

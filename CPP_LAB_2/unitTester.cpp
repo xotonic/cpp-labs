@@ -42,7 +42,6 @@ bool unitTester::test()
 	}
 
 	return 1;
-
 }
 
 unitTester::~unitTester()

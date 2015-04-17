@@ -25,7 +25,6 @@ protected:
 		second = a;
 	}
 private:
-	
+
 	Number first, second;
 };
-

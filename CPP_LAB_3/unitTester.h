@@ -1,7 +1,6 @@
 #pragma once
 #include "Number.h"
 
-
 class unitTester
 {
 public:
@@ -9,4 +8,3 @@ public:
 	bool test();
 	~unitTester();
 };
-

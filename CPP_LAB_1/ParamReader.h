@@ -18,4 +18,3 @@ public:
 private:
 	Number first, second;
 };
-

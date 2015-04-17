@@ -1,6 +1,5 @@
 #include "Number.h"
 
-
 Number::Number(int numerator, int denominator) : num(numerator), den(denominator)
 {
 }
@@ -17,15 +16,14 @@ int Number::getDen()
 
 void Number::reduce()
 {
-		int x = (num<den) ? num : den;
-		for (int i = 2; i <= x; i++)
-			if ((num%i == 0) && (den%i) == 0)
-			{
-				num /= i;
-				den /= i;
-				i = 1;
-			}
-			
+	int x = (num < den) ? num : den;
+	for (int i = 2; i <= x; i++)
+		if ((num%i == 0) && (den%i) == 0)
+		{
+			num /= i;
+			den /= i;
+			i = 1;
+		}
 }
 
 void Number::add(Number n)
@@ -38,8 +36,6 @@ void Number::add(Number n)
 	num += x;
 	reduce();
 	//reduce();
-	
-
 }
 void Number::substract(Number n)
 {

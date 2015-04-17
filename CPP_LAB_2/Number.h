@@ -8,8 +8,8 @@ public:
 	void multiply(Number); /*умнжение*/
 	void divide(Number); /*деление*/
 
-	bool setNum(int pnum); 
-	bool setDen(int pden); 
+	bool setNum(int pnum);
+	bool setDen(int pden);
 
 	int getNum(); /* получить числитель */
 	int getDen(); /*получить знаменатель*/
@@ -19,6 +19,4 @@ public:
 private:
 	int num, /*числитель*/
 		den; /*знаменатель*/
-	
 };
-

@@ -1,6 +1,5 @@
 #include "AdvParamReader.h"
 
-
 void AdvParamReader::CheckParams(int argc, char *argv[])
 {
 	istringstream input(argv[1]);
@@ -18,7 +17,6 @@ void AdvParamReader::CheckParams(int argc, char *argv[])
 		operation = div;
 	else operation = invalid;
 
-
 	input.clear();
 	input.str(argv[2]);
 
@@ -34,4 +32,3 @@ void AdvParamReader::CheckParams(int argc, char *argv[])
 
 	setSecond(Number(a, b));
 }
-

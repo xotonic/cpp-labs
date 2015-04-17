@@ -3,7 +3,7 @@
 #include "unitTester.h"
 #include "App.h"
 #include "BasicCommands.h"
-
+#include "VectorCommands.h"
 using namespace std;
 
 int main(int argc, char *argv[])
@@ -22,11 +22,17 @@ int main(int argc, char *argv[])
 	Divide div;
 	History his;
 
+	AddVector addv;
+	SubstractVector subv;
+
 	app.addCommand(&add);
 	app.addCommand(&sub);
 	app.addCommand(&mul);
 	app.addCommand(&div);
 	app.addCommand(&his);
+
+	app.addCommand(&addv);
+	app.addCommand(&subv);
 
 	if (!app.LoadParams(argc, argv))
 	{

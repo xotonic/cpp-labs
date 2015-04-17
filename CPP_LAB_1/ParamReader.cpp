@@ -1,6 +1,5 @@
 #include "ParamReader.h"
 
-
 ParamReader::ParamReader() : first(), second() {}
 
 void ParamReader::CheckParams(int argc, char *argv[])
@@ -20,7 +19,6 @@ void ParamReader::CheckParams(int argc, char *argv[])
 		operation = div;
 	else operation = invalid;
 
-	
 	input.clear();
 	input.str(argv[2]);
 
@@ -28,14 +26,13 @@ void ParamReader::CheckParams(int argc, char *argv[])
 	char dummy;
 	input >> a >> dummy >> b;
 
-	first = Number(a,b);
+	first = Number(a, b);
 
 	input.clear();
 	input.str(argv[3]);
 	input >> a;
 
 	second = Number(a, 1);
-
 }
 
 Number ParamReader::getFirst()

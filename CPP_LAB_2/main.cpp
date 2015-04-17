@@ -3,10 +3,8 @@
 #include "unitTester.h"
 #include "AdvParamReader.h"
 
-
-int main(int argc, char *argv[]) 
+int main(int argc, char *argv[])
 {
-	
 	/* unit тестирование*/
 	unitTester ut;
 
@@ -15,7 +13,7 @@ int main(int argc, char *argv[])
 	/* чтение аргументов командной строки*/
 	AdvParamReader pr;
 	pr.CheckParams(argc, argv);
-	
+
 	Number a = pr.getFirst(), b = pr.getSecond();
 
 	switch (pr.operation)
