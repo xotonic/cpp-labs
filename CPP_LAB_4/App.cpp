@@ -11,15 +11,6 @@ bool App::LoadParams(int argc, char *argv[])
 		args.push_back(s);
 	}
 
-	/*
-	vector<string> s(args.size());
-
-	for (int i = 0; i < args.size(); i++)
-	{
-	args[i] = s[s.size() - i -1];
-	}
-	*/
-
 	/* Поиск подходящей команды*/
 	int succesed = 0;
 

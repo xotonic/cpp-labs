@@ -68,7 +68,6 @@ void Number::divide(Number n)
 	num *= n.getDen();
 	den *= n.getNum();
 	reduce();
-	//reduce();
 }
 
 bool Number::setNum(int pnum)

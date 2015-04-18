@@ -14,6 +14,14 @@ bool AddVector::CheckSignature(const std::vector<std::string>& str)
 
 	auto it = str.begin();
 
+	while (it != str.end())
+	{
+		Number a = ParseNumber(*it);
+		Number b = ParseNumber(*it++);
+		Number r = a + b;
+		sum.push_back(r);
+	}
+
 	for (it++; it != str.end(); it += 2)
 	{
 		Number a = ParseNumber(*it);
