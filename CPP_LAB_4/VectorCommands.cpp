@@ -8,34 +8,49 @@ bool AddVector::CheckSignature(const std::vector<std::string>& str)
 
 	if ((str.size() - 1) % 2 == 1) return false;
 
-	int nums_count = (str.size() - 1) / 2;
+	int nums_count = (str.size() - 5) / 2;
 
 	sum.reserve(nums_count);
 
+	std::vector<Number> v1, v2;
+	v1.reserve(nums_count);
+	v2.reserve(nums_count);
+
 	auto it = str.begin();
+	it++;
 
-	while (it != str.end())
+	if (*it != "[") return false;
+	it++;
+	while (*it != "]")
 	{
-		Number a = ParseNumber(*it);
-		Number b = ParseNumber(*it++);
-		Number r = a + b;
-		sum.push_back(r);
+		v1.push_back(Number::parse(*it));
+		it++;
+	}
+	it++;
+
+	if (*it != "[") return false;
+	it++;
+	while (*it != "]")
+	{
+		v2.push_back(Number::parse(*it));
+		it++;
 	}
 
-	for (it++; it != str.end(); it += 2)
+	for (int i = 0; i < nums_count; i++)
 	{
-		Number a = ParseNumber(*it);
-		Number b = ParseNumber(*it++);
-		Number r = a + b;
-		sum.push_back(r);
+		Number s = v1[i] + v2[i];
+		sum.push_back(s);
 	}
+
 	return true;
 }
 
 std::string AddVector::GetResult()
 {
 	std::ostringstream s;
-	for (auto i : sum) s << ' ' << i.toString();
+	s << "[";
+	for (auto i : sum) s << ' ' << i;
+	s << " ]";
 	return s.str();
 }
 
@@ -49,24 +64,48 @@ bool SubstractVector::CheckSignature(const std::vector<std::string>& str)
 
 	if ((str.size() - 1) % 2 == 1) return false;
 
-	int nums_count = (str.size() - 1) / 2;
+	int nums_count = (str.size() - 5) / 2;
 
 	sum.reserve(nums_count);
 
-	auto it = str.begin();
+	std::vector<Number> v1, v2;
+	v1.reserve(nums_count);
+	v2.reserve(nums_count);
 
-	for (it++; it != str.end(); it += 2)
+	auto it = str.begin();
+	it++;
+
+	if (*it != "[") return false;
+	it++;
+	while (*it != "]")
 	{
-		Number a = ParseNumber(*it);
-		Number b = ParseNumber(*it++);
-		sum.push_back(a - b);
+		v1.push_back(Number::parse(*it));
+		it++;
 	}
+	it++;
+
+	if (*it != "[") return false;
+	it++;
+	while (*it != "]")
+	{
+		v2.push_back(Number::parse(*it));
+		it++;
+	}
+
+	for (int i = 0; i < nums_count; i++)
+	{
+		Number s = v1[i] - v2[i];
+		sum.push_back(s);
+	}
+
 	return true;
 }
 
 std::string SubstractVector::GetResult()
 {
 	std::ostringstream s;
-	for (auto i : sum) s << ' ' << i.toString();
+	s << "[";
+	for (auto i : sum) s << ' ' << i;
+	s << " ]";
 	return s.str();
 }

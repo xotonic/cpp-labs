@@ -6,8 +6,8 @@ bool Add::CheckSignature(const std::vector<std::string>& str)
 
 	if (str[0] != "--add") return false;
 
-	a = ParseNumber(str[1]);
-	b = ParseNumber(str[2]);
+	a = Number::parse(str[1]);
+	b = Number::parse(str[2]);
 
 	return true;
 }
@@ -16,7 +16,6 @@ std::string Add::GetResult()
 {
 	Number c = a;
 	c.add(b);
-
 	return c.toString();
 }
 
@@ -26,8 +25,8 @@ bool Substract::CheckSignature(const std::vector<std::string>& str)
 
 	if (str[0] != "--sub") return false;
 
-	a = ParseNumber(str[1]);
-	b = ParseNumber(str[2]);
+	a = Number::parse(str[1]);
+	b = Number::parse(str[2]);
 
 	return true;
 }
@@ -46,8 +45,8 @@ bool Multiply::CheckSignature(const std::vector<std::string>& str)
 
 	if (str[0] != "--mul") return false;
 
-	a = ParseNumber(str[1]);
-	b = ParseNumber(str[2]);
+	a = Number::parse(str[1]);
+	b = Number::parse(str[2]);
 
 	return true;
 }
@@ -66,8 +65,8 @@ bool Divide::CheckSignature(const std::vector<std::string>& str)
 
 	if (str[0] != "--div") return false;
 
-	a = ParseNumber(str[1]);
-	b = ParseNumber(str[2]);
+	a = Number::parse(str[1]);
+	b = Number::parse(str[2]);
 
 	return true;
 }

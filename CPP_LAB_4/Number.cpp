@@ -1,19 +1,5 @@
 #include "Number.h"
 
-Number::Number(int numerator, int denominator) : num(numerator), den(denominator)
-{
-}
-
-int Number::getNum()
-{
-	return num;
-}
-
-int Number::getDen()
-{
-	return den;
-}
-
 void Number::reduce()
 {
 	int x = (num < den) ? num : den;
@@ -26,12 +12,21 @@ void Number::reduce()
 		}
 }
 
-std::string Number::toString()
+std::string Number::toString() const
 {
-	std::stringstream s;
+	std::ostringstream s;
 	s << getNum() << '/' << getDen();
 
 	return s.str();
+}
+
+Number Number::parse(std::string str)
+{
+	std::istringstream s(str);
+	int x, y;
+	char slash;
+	s >> x >> slash >> y;
+	return Number(x, y);
 }
 
 void Number::add(Number n)
@@ -43,7 +38,6 @@ void Number::add(Number n)
 	den *= y;
 	num += x;
 	reduce();
-	//reduce();
 }
 void Number::substract(Number n)
 {
@@ -54,13 +48,11 @@ void Number::substract(Number n)
 	den *= y;
 	num -= x;
 	reduce();
-	//reduce();
 }
 void Number::multiply(Number n)
 {
 	num *= n.getNum();
 	den *= n.getDen();
-	reduce();
 	reduce();
 }
 void Number::divide(Number n)
@@ -70,13 +62,3 @@ void Number::divide(Number n)
 	reduce();
 }
 
-bool Number::setNum(int pnum)
-{
-	num = pnum;
-	return true;
-}
-bool Number::setDen(int pden)
-{
-	den = pden;
-	return true;
-}
