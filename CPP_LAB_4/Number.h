@@ -32,6 +32,20 @@ public:
 		return input;
 	}
 
+	friend  Number& operator+(Number& n, Number& m)
+	{
+		Number k = n;
+		k.add(m);
+		return k;
+	}
+
+	friend  Number& operator-(Number& n, Number& m)
+	{
+		Number k = n;
+		k.substract(m);
+		return k;
+	}
+
 private:
 	int num, /*числитель*/
 		den; /*знаменатель*/

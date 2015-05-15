@@ -5,20 +5,6 @@
 #include <fstream>
 #include <vector>
 
-// перегрузка
-static const Number& operator+(Number& n, Number& m)
-{
-	Number k = n;
-	k.add(m);
-	return k;
-}
-
-static const Number& operator-(Number& n, Number& m)
-{
-	Number k = n;
-	k.substract(m);
-	return k;
-}
 
 class AddVector :
 	public Command

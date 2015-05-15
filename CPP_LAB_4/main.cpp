@@ -1,6 +1,5 @@
 #include <iostream>
 #include "Number.h"
-#include "unitTester.h"
 #include "App.h"
 #include "BasicCommands.h"
 #include "VectorCommands.h"
@@ -8,11 +7,6 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-	/* unit тестирование*/
-	unitTester ut;
-	if (!ut.test()) cout << "Unit test: wrong numbers computing" << endl;
-
-	/* чтение аргументов командной строки*/
 
 	App app;
 
@@ -21,7 +15,6 @@ int main(int argc, char *argv[])
 	Multiply mul;
 	Divide div;
 	History his;
-
 	AddVector addv;
 	SubstractVector subv;
 
