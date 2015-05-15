@@ -61,4 +61,3 @@ void Number::divide(Number n)
 	den *= n.getNum();
 	reduce();
 }
-

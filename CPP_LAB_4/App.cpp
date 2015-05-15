@@ -3,6 +3,7 @@
 bool App::LoadParams(int argc, char *argv[])
 {
 	/*Заполнение вектора аргументами командной строки*/
+	args.clear();
 	args.reserve(argc);
 
 	for (int i = 1; i < argc; i++)
